@@ -1,7 +1,7 @@
 {
-    "stable": {
-        "1.0": {
-            "current": "1.0.0",
+    "unstable": {
+        "0.1": {
+            "current": "0.1.0",
             "announcement": "http://my.site.com/version_1.0.0",
             "download": "http://my.site.com/version_1.0.0.zip",
             "eol": null,
