@@ -1,9 +1,9 @@
 {
     "stable": {
-        "0.1": {
-            "current": "0.1.0",
-            "download": "https://www.phpbb.com/customise/db/extension/mchat_extension/",
-            "announcement": "https://www.phpbb.com/customise/db/extension/mchat_extension/",
+        "1.0": {
+            "current": "1.0.0",
+            "download": "https://github.com/msaulohenrique/aps/archive/1.0.0.zip",
+            "announcement": "https://github.com/msaulohenrique/aps/commit/65aca57da0ccd0cea5e3d5241f98b2aa758f3a31",
             "eol": null,
             "security": false
         }
@@ -11,8 +11,8 @@
     "unstable": {
         "1.0": {
             "current": "1.0.0",
-            "download": "https://www.phpbb.com/customise/db/extension/mchat_extension/",
-            "announcement": "https://www.phpbb.com/customise/db/extension/mchat_extension/",
+            "download": "https://github.com/msaulohenrique/aps/archive/1.0.0.zip",
+            "announcement": "https://github.com/msaulohenrique/aps/commit/65aca57da0ccd0cea5e3d5241f98b2aa758f3a31",
             "eol": null,
             "security": false
         }
