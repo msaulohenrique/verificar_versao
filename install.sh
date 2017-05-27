@@ -1,4 +1,23 @@
 #!/bin/bash
+echo -e "
+\033[1;31m        _,met\$\$\$\$\$gg.                               \033[1;37m  ,,         \033[1;31m ,,    \033[1;31m
+     ,g\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$P.     \033[1;37m  \`7MM\"\"\"Yb.            *MM        \033[1;31m  db \033[1;31m
+   ,g\$\$P\"\"       \"\"\"Y\$\$.\".      \033[1;37m MM    \`Yb.           MM \033[1;31m
+  ,\$\$P'              \`\$\$\$.     \033[1;37m  MM     \`Mb  .gP\"Ya   MM,dMMb.  \`7MM   ,6\"Yb.  \`7MMpMMMb. \033[1;31m
+ ',\$\$P       ,ggs.     \`\$\$b:    \033[1;37m MM      MM ,M'   Yb  MM    \`Mb   MM  8)   MM    MM    MM  \033[1;31m
+ \`d\$\$'     ,\$P\"'   \033[1;33m.\033[1;31m    \$\$\$   \033[1;37m   MM     ,MP 8M\"\"\"\"\"\"  MM     M8   MM   ,pm9MM    MM    MM  \033[1;31m
+  \$\$P      d\$'     \033[1;33m, \033[1;31m   \$\$P     \033[1;37m MM    ,dP' YM.    ,  MM.   ,M9   MM  8M   MM    MM    MM \033[1;31m
+  \$\$:      \$\$.  \033[1;33m - \033[1;31m   ,d\$\$'  \033[1;37m  .JMMmmmdP'    \`Mbmmd'  P^YbmdP'  .JMML.\`Moo9^Yo..JMML  JMML.\033[1;31m  
+  \$\$\;      Y\$b._   _,d\$P'   
+  Y\$\$.    \033[1;33m\`.\033[1;31m\`\"Y\$\$\$\$P\"'       
+  \`\$\$b      \033[1;33m\"-.__ \033[1;31m           
+   \`Y\$\$                      
+    \`Y\$\$.                    
+      \`\$\$b.                  
+        \`Y\$\$b.               
+           \`\"Y\$b._           
+               \`\"\"\"\"         \033[0m
+"
 echo -e "\033[1;33m ATENÃ‡ÃƒO \033[0m"
 echo "  Este Install foi programado para Instalar o LAMP para distribuiÃ§Ã£o do Linux Debian 8 32x ou 64x."
 echo " Durante a InstalaÃ§Ã£o serÃ¡ solicitado varias vezes para digitar uma senha. Escolha agora uma senha pessoal de sua preferÃªncia"
