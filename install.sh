@@ -11,7 +11,7 @@ echo "INSTALAÃ‡ÃƒO DO PAINEL SSH 3 INICIADA!"
 echo ""
 echo ""
 echo -e "\033[01;33mAtualizando sistema\033[01;37m!" 
-apt-get update && apt-get upgrade -y
+apt-get update -y && apt-get upgrade -y
 echo -e "\033[01;33mImplantando Apache...\033[01;37m" 
 apt-get install apache2 -y
 echo -e "\033[01;33mImplantando PHP 5...\033[01;37m" 
@@ -32,10 +32,10 @@ php -m |grep ssh2
 Precisa aparecer ssh2
 sudo service apache2 restart
 echo -e "\033[01;33mConfigurando banco de dados...\033[01;37m"
-mysql -h localhost -u root -proot -e "grant all privileges on *.* to root@'localhost' identified by 'root'; commit;
+mysql -h localhost -u root -p root -e "grant all privileges on *.* to root@'localhost' identified by 'root'; commit;
 flush privileges;"
 echo -e "\033[01;33mCriando banco de dados...\033[01;37m"
-mysql -h localhost -u root -proot -e "CREATE DATABASE painel"
+mysql -h localhost -u root -p root -e "CREATE DATABASE painel"
 echo -e "\033[01;33mInstalando painel...\033[01;37m"
 apt-get install unzip -y
 cd /var/www/html
