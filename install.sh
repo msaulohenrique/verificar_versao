@@ -1,23 +1,4 @@
 #!/bin/bash
-	echo -e "
-\033[1;31m        _,met\$\$\$\$\$gg.                               \033[1;37m  ,,         \033[1;31m ,,    \033[1;31m
-     ,g\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$P.     \033[1;37m  \`7MM\"\"\"Yb.            *MM        \033[1;31m  db \033[1;31m
-   ,g\$\$P\"\"       \"\"\"Y\$\$.\".      \033[1;37m MM    \`Yb.           MM \033[1;31m
-  ,\$\$P'              \`\$\$\$.     \033[1;37m  MM     \`Mb  .gP\"Ya   MM,dMMb.  \`7MM   ,6\"Yb.  \`7MMpMMMb. \033[1;31m
- ',\$\$P       ,ggs.     \`\$\$b:    \033[1;37m MM      MM ,M'   Yb  MM    \`Mb   MM  8)   MM    MM    MM  \033[1;31m
- \`d\$\$'     ,\$P\"'   \033[1;33m.\033[1;31m    \$\$\$   \033[1;37m   MM     ,MP 8M\"\"\"\"\"\"  MM     M8   MM   ,pm9MM    MM    MM  \033[1;31m
-  \$\$P      d\$'     \033[1;33m, \033[1;31m   \$\$P     \033[1;37m MM    ,dP' YM.    ,  MM.   ,M9   MM  8M   MM    MM    MM \033[1;31m
-  \$\$:      \$\$.  \033[1;33m - \033[1;31m   ,d\$\$'  \033[1;37m  .JMMmmmdP'    \`Mbmmd'  P^YbmdP'  .JMML.\`Moo9^Yo..JMML  JMML.\033[1;31m  
-  \$\$\;      Y\$b._   _,d\$P'   
-  Y\$\$.    \033[1;33m\`.\033[1;31m\`\"Y\$\$\$\$P\"'       
-  \`\$\$b      \033[1;33m\"-.__ \033[1;31m           
-   \`Y\$\$                      
-    \`Y\$\$.                    
-      \`\$\$b.                  
-        \`Y\$\$b.               
-           \`\"Y\$b._           
-               \`\"\"\"\"         \033[0m
-"
 echo -e "\033[1;33m ATENÃ‡ÃƒO \033[0m"
 echo "  Este Install foi programado para Instalar o LAMP para distribuiÃ§Ã£o do Linux Debian 8 32x ou 64x."
 echo " Durante a InstalaÃ§Ã£o serÃ¡ solicitado varias vezes para digitar uma senha. Escolha agora uma senha pessoal de sua preferÃªncia"
@@ -35,21 +16,21 @@ echo -e "\033[01;33mImplantando Apache...\033[01;37m"
 apt-get install apache2 -y
 echo -e "\033[01;33mImplantando PHP 5...\033[01;37m" 
 apt-get install php5 libapache2-mod-php5 php5-mcrypt -y
-sudo service apache2 restart
+service apache2 restart
 echo -e "\033[01;33mImplantando MySQL...\033[01;37m" 
 apt-get install mysql-server php5-mysql -y
-sudo mysql_install_db
-sudo mysql_secure_installation
+mysql_install_db
+mysql_secure_installation
 echo -e "\033[01;33mImplantando PHPMyAdmin...\033[01;37m" 
 apt-get install phpmyadmin -y
-sudo php5enmod mcrypt
-sudo service apache2 restart
-sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
+php5enmod mcrypt
+service apache2 restart
+ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
 echo -e "\033[01;33mImplantando modulo SSH2...\033[01;37m" 
 apt-get install libssh2-1-dev libssh2-php -y
 php -m |grep ssh2
 Precisa aparecer ssh2
-sudo service apache2 restart
+service apache2 restart
 echo -e "\033[01;33mConfigurando banco de dados...\033[01;37m"
 mysql -h localhost -u root -p root -e "grant all privileges on *.* to root@'localhost' identified by 'root'; commit;
 flush privileges;"
@@ -78,7 +59,7 @@ echo "  Acesse seu Painel de Gerenciamente SSH por qualquer navegador de interne
 echo ""
 echo -e "\033[1;31m      PAINEL DO ADMINISTRADOR\033[0m"
 echo -e "\033[1;34m          http://seuip/admin\033[0m"
-echo -e "\033[1;34m          UsuÃ¡rio: $admin\033[0m"
+echo -e "\033[1;34m          UsuÃ¡rio: admin\033[0m"
 echo -e "\033[1;34m          Senha: admin\033[0m"
 echo ""
 echo -e "\033[1;31m      PAINEL DO REVENDEDOR\033[0m"
@@ -88,12 +69,6 @@ echo ""
 echo "  O reboot e obrigatÃ³rio e serÃ¡ executado automaticamente, apÃ³s ser executado vocÃª pode fechar o terminal e acessar o painel pelo navegador."
 echo ""
 tput setaf 3 ; tput bold ; read -n 1 -s -p " Reboot AutomÃ¡tico, aperte qualquer tecla para continuar..." ; echo "" ; echo "" ; tput sgr0
-for((i = 5; i >= 1; i--))
-	do
-	clear
-	echo ""
-	echo " Reboot AutomÃ¡tico do Sistema em $i..."
-	sleep 1
 done
 reboot
 exit 1
