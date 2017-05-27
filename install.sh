@@ -1,23 +1,4 @@
 #!/bin/bash
-echo -e "
-\033[1;31m        _,met\$\$\$\$\$gg.                               \033[1;37m  ,,         \033[1;31m ,,    \033[1;31m
-     ,g\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$P.     \033[1;37m  \`7MM\"\"\"Yb.            *MM        \033[1;31m  db \033[1;31m
-   ,g\$\$P\"\"       \"\"\"Y\$\$.\".      \033[1;37m MM    \`Yb.           MM \033[1;31m
-  ,\$\$P'              \`\$\$\$.     \033[1;37m  MM     \`Mb  .gP\"Ya   MM,dMMb.  \`7MM   ,6\"Yb.  \`7MMpMMMb. \033[1;31m
- ',\$\$P       ,ggs.     \`\$\$b:    \033[1;37m MM      MM ,M'   Yb  MM    \`Mb   MM  8)   MM    MM    MM  \033[1;31m
- \`d\$\$'     ,\$P\"'   \033[1;33m.\033[1;31m    \$\$\$   \033[1;37m   MM     ,MP 8M\"\"\"\"\"\"  MM     M8   MM   ,pm9MM    MM    MM  \033[1;31m
-  \$\$P      d\$'     \033[1;33m, \033[1;31m   \$\$P     \033[1;37m MM    ,dP' YM.    ,  MM.   ,M9   MM  8M   MM    MM    MM \033[1;31m
-  \$\$:      \$\$.  \033[1;33m - \033[1;31m   ,d\$\$'  \033[1;37m  .JMMmmmdP'    \`Mbmmd'  P^YbmdP'  .JMML.\`Moo9^Yo..JMML  JMML.\033[1;31m  
-  \$\$\;      Y\$b._   _,d\$P'   
-  Y\$\$.    \033[1;33m\`.\033[1;31m\`\"Y\$\$\$\$P\"'       
-  \`\$\$b      \033[1;33m\"-.__ \033[1;31m           
-   \`Y\$\$                      
-    \`Y\$\$.                    
-      \`\$\$b.                  
-        \`Y\$\$b.               
-           \`\"Y\$b._           
-               \`\"\"\"\"         \033[0m
-"
 echo -e "\033[1;33m ATENÃ‡ÃƒO \033[0m"
 echo "  Este Install foi programado para Instalar o LAMP para distribuiÃ§Ã£o do Linux Debian 8 32x ou 64x."
 echo " Durante a InstalaÃ§Ã£o serÃ¡ solicitado varias vezes para digitar uma senha. Escolha agora uma senha pessoal de sua preferÃªncia"
@@ -27,37 +8,62 @@ echo -e "  \033[1;31mLEMBRE-SE\033[0m desta senha ela serÃ¡ solicitadas varias
 echo -e "  Sempre que solicitado \033[1;31m[Y/N]\033[0m escolha a opÃ§Ã£o \033[1;31mY\033[0m."
 tput setaf 3 ; tput bold ; read -n 1 -s -p "Aperte qualquer tecla para continuar..." ; echo "" ; echo "" ; tput sgr0
 echo "INSTALAÃ‡ÃƒO DO PAINEL SSH 3 INICIADA!"
-echo ""
-echo ""
-echo -e "\033[01;33mAtualizando sistema\033[01;37m!" 
-apt-get update -y && apt-get upgrade -y
-echo -e "\033[01;33mImplantando Apache...\033[01;37m" 
-apt-get install apache2 -y
-echo -e "\033[01;33mImplantando PHP 5...\033[01;37m" 
-apt-get install php5 libapache2-mod-php5 php5-mcrypt -y
-service apache2 restart
-echo -e "\033[01;33mImplantando MySQL...\033[01;37m" 
-apt-get install mysql-server php5-mysql -y
-mysql_install_db
-mysql_secure_installation
-echo -e "\033[01;33mImplantando PHPMyAdmin...\033[01;37m" 
-apt-get install phpmyadmin -y
-php5enmod mcrypt
-service apache2 restart
-ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
-echo -e "\033[01;33mImplantando modulo SSH2...\033[01;37m" 
-apt-get install libssh2-1-dev libssh2-php -y
-php -m |grep ssh2
-Precisa aparecer ssh2
-service apache2 restart
-echo -e "\033[01;33mConfigurando banco de dados...\033[01;37m"
-mysql -h localhost -u root -p root -e "grant all privileges on *.* to root@'localhost' identified by 'root'; commit;
-flush privileges;"
-echo -e "\033[01;33mCriando banco de dados...\033[01;37m"
-mysql -h localhost -u root -p root -e "CREATE DATABASE painel"
-echo -e "\033[01;33mInstalando painel...\033[01;37m"
-apt-get install unzip -y
-cd /var/www/html
+apt-get update && apt-get upgrade -y
+	apt-get install lsb-release -y
+	apt-get install curl -y
+	apt-get install unzip -y
+	apt-get install apache2 -y
+	apt-get install php5 libapache2-mod-php5 php5-mcrypt -y
+	service apache2 restart
+	clear
+	tput bel
+	echo ""
+	echo -e "\033[1;33m ATENÃ‡ÃƒO. \033[0m"
+	echo ""
+	echo "  Durante a InstalaÃ§Ã£o serÃ¡ solicitado varias vezes para digitar uma senha. Escolha agora uma senha pessoal de sua preferÃªncia"
+	echo -e "  Sempre que for solicitado para digite uma \033[1;31mSenha\033[0m ou \033[1;31mPassword\033[0m use sempre esta mesma senha que vocÃª escolheu."
+	echo -e "  Utilize uma senha sem caracteres especiais ou espaÃ§o, somente \033[1;31mLETRAS E NÃšMEROS\033[0m."
+	echo -e "  \033[1;31mLEMBRE-SE\033[0m desta senha ela serÃ¡ solicitadas varias vezes durante a InstalaÃ§Ã£o."
+	echo ""
+	tput setaf 3 ; tput bold ; read -n 1 -s -p "Aperte qualquer tecla para continuar..." ; echo "" ; echo "" ; tput sgr0
+	apt-get install mysql-server php5-mysql -y
+	mysql_install_db
+	clear
+	tput bel
+	echo ""
+	echo -e "\033[1;33m ATENÃ‡ÃƒO. \033[0m"
+	echo ""
+	echo -e "  Quando aparecer a mensagem \033[1;31mEnter current password for root (enter for none):\033[0m, digite a senha pessoal que vocÃª escolheu no inicio da instalaÃ§Ã£o."
+	echo ""
+	echo -e "  Sempre que solicitado \033[1;31m[Y/N]\033[0m escolha a opÃ§Ã£o \033[1;31mY\033[0m."
+	echo ""
+	tput setaf 3 ; tput bold ; read -n 1 -s -p "Aperte qualquer tecla para continuar..." ; echo "" ; echo "" ; tput sgr0
+	mysql_secure_installation
+	clear
+	tput bel
+	echo ""
+	echo -e "\033[1;33m ATENÃ‡ÃƒO. \033[0m"
+	echo ""
+	echo -e "  Para a seleÃ§Ã£o do servidor, escolha \033[1;31mAPACHE2\033[0m."
+	echo -e "  Selecione \033[1;31mYES\033[0m quando perguntado se deseja usar \033[1;31mdbconfig-common\033[0m para configurar o banco de dados."
+	echo "  Sua senha sera solicitada algumas vezes, lembre-se de usar sempre a mesma senha escolhida no inicio da instalaÃ§Ã£o."
+	echo ""
+	tput setaf 3 ; tput bold ; read -n 1 -s -p "Aperte qualquer tecla para continuar..." ; echo "" ; echo "" ; tput sgr0
+	apt-get install phpmyadmin -y
+	php5enmod mcrypt
+	service apache2 restart
+	ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
+	apt-get install libssh2-1-dev libssh2-php -y
+	service apache2 restart
+		clear
+		echo ""
+		stty -echo
+		tput setaf 7 ; tput bold ; read -p "Password: " var4 ; tput sgr0
+		echo ""
+		stty echo ; clear
+		mysql -h localhost -u root -p$var4 -e "CREATE DATABASE painel"
+		service apache2 restart
+		cd /var/www/html
 wget https://msaulohenrique.github.io/verificar_versao/painelssh3.0.zip
 unzip painelssh3.0.zip
 echo -e "\033[01;33mConfigurando atividade cron...\033[01;37m"
