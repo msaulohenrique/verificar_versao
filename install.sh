@@ -67,8 +67,4 @@ echo -e "\033[1;34m          http://seuip/\033[0m"
 echo -e "\033[1;34m          UsuÃ¡rio e Senha Determinados no painel do administrador\033[0m"
 echo ""
 echo "  O reboot e obrigatÃ³rio e serÃ¡ executado automaticamente, apÃ³s ser executado vocÃª pode fechar o terminal e acessar o painel pelo navegador."
-echo ""
-tput setaf 3 ; tput bold ; read -n 1 -s -p " Reboot AutomÃ¡tico, aperte qualquer tecla para continuar..." ; echo "" ; echo "" ; tput sgr0
-done
-reboot
 exit 1
