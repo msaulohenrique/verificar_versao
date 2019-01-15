@@ -15,6 +15,8 @@ if [ "$run" == n ] ; then
    exit
 else
 #instalando
+iptables -I INPUT -p tcp -s 0/0 --dport 20 -j ACCEPT
+iptables -I INPUT -p tcp -s 0/0 --dport 21 -j ACCEPT
 yum install iptables wget nano vixie-cron mailx sendmail nmap perl rsync rdate gcc nano openssh-server openssh-clients kernel-devel postgresql-libs fuse-curlftpfs unrar gcc glibc.i686 glibc-devel.i686 zlib-devel.i686 ncurses-devel.i686 libX11-devel.i686 libXrender.i686 libXrandr.i686 postgresql-libs openssl-devel glibc-devel unzip -y
 ln -s /usr/bin/nano /usr/bin/pico
 iptables -F
