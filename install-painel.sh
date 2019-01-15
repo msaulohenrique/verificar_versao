@@ -160,6 +160,8 @@ service crond restart
 #################################################################################
 cd /home/painel/public_html
 chown painel.painel * -Rfv
+cd /home/player/public_html
+chown painel.painel * -Rfv
 ######################################
 ###### CONFIGURAÇÂO PHPMYADMIN #######
 ######################################
