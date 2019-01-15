@@ -54,8 +54,11 @@ chkconfig mysqld on
 adduser painel
 echo 'painel:k4kh34rhk3r34rssf' | chpasswd
 mkdir /home/painel/public_html
+mkdir /home/player/public_html
 chmod 0755 /home/painel
 chmod 0755 /home/painel/public_html
+chmod 0755 /home/player
+chmod 0755 /home/player/public_html
 replace '#NameVirtualHost *:80' 'NameVirtualHost *:80' -- /etc/httpd/conf/httpd.conf
 replace 'AddDefaultCharset UTF-8' 'AddDefaultCharset ISO-8859-1' -- /etc/httpd/conf/httpd.conf
 replace '/var/www/html' '/home/painel/public_html' -- /etc/httpd/conf/httpd.conf
@@ -196,6 +199,7 @@ echo '    Allow from None' >> /etc/httpd/conf.d/phpMyAdmin.conf
 echo '</Directory>' >> /etc/httpd/conf.d/phpMyAdmin.conf
 /etc/init.d/mysqld restart
 mysql_secure_installation
+/etc/init.d/httpd restart
 #concluir
 clear
 echo "${GREEN}"
