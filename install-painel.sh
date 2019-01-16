@@ -50,6 +50,7 @@ ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 rdate -s rdate.cpanel.net
 iptables -I INPUT -p tcp -s 0/0 --dport 20 -j ACCEPT
 iptables -I INPUT -p tcp -s 0/0 --dport 21 -j ACCEPT
+iptables -A INPUT -i lo -p tcp --dport 3306 -j ACCEPT
 yum install httpd httpd-devel mysql mysql-server mysql-devel php-common php-mbstring php-php-gettext php-bcmath php-xml php-gd php-tcpdf-dejavu-sans-fonts phpMyAdmin php-devel php-ldap php-cli php-mysql php-process php-mcrypt php-tcpdf php-odbc php-zts php-snmp php-pear php-xmlrpc php-dba php-pdo php php-tidy php-intl php-imap php-embedded php-soap -y
 chkconfig httpd on
 chkconfig mysqld on
