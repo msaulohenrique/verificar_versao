@@ -111,6 +111,8 @@ ldconfig
 #Configuração do FTP para conexão com banco de dados do painel
 ######################################################################
 nano /etc/pure-ftpd/pureftpd-mysql.conf
+iptables -A INPUT -i lo -p tcp --dport 3306 -j ACCEPT
+
 ######################################################################
 #Finalização
 ######################################################################
